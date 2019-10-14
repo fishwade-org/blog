@@ -52,7 +52,7 @@ RUN cd ${LARAVEL_PATH} \
 
 RUN rm /etc/apache2/sites-enabled/*
 COPY config/apache2 /etc/apache2/
-RUN sed -i 's/\/var\/www\/.*\/public/\/var\/www\/laravel\/public/g' /etc/apache2/sites-available/laravel.conf \
+RUN sed -i 's/\/var\/www\/.*\/public/\/var\/www\/laravel\/public/g' /etc/apache2/sites-available/blog.conf \
     && a2enmod rewrite headers \
     && a2ensite laravel
 
