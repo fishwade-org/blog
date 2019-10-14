@@ -43,7 +43,6 @@ COPY . ${LARAVEL_PATH}
 COPY --from=composer /app/vendor/ ${LARAVEL_PATH}/vendor/
 COPY --from=frontend /app/public/js/ ${LARAVEL_PATH}/public/js/
 COPY --from=frontend /app/public/css/ ${LARAVEL_PATH}/public/css/
-COPY --from=frontend /app/mix-manifest.json ${LARAVEL_PATH}/mix-manifest.json
 
 RUN cd ${LARAVEL_PATH} \
       && php artisan package:discover \
